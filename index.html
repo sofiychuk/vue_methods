@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./vue.min.js"></script>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message1 }}</h1>
+        <p v-text="message2"></p>
+        <p v-html="message3"></p>
+        <p v-html="message1.slice(0, 7) +
+        message4 + 
+        message1.slice(12)
+        "></p>
+        <input type="text" v-model="message4">
+        <hr>
+    </div>
+    <div id="method">
+        <h2>{{message}}!</h2>
+        <p v-html="blueFire(result(lightning(inferno(wizard))))"></p>
+        <hr>
+
+    </div>
+    <div id="method2">
+        <h2> {{message}} 2! </h2>
+        <!-- <p v-if="wizard == harry"
+            v-html="wizard + ' ' + hedwig"></p> -->
+        <!-- <template v-if="true" style="display: none;">
+            <p v-html="harry    + ' ' + hedwig     "></p>
+            <p v-html="ron      + ' ' + scabbers   "></p>
+            <p v-html="hermione + ' ' + crookshanks"></p>
+        </template> -->
+        <p 
+            v-for="wizard in wizards()"
+            v-html="wizard.name + ' ' + wizard.pet"
+        ></p>
+    </div>
+</body>
+
+</html>
